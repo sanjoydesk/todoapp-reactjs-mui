@@ -31,7 +31,7 @@ const TextFieldSearchBar = ({ list }) => {
         <TextField
           id="search-bar"
           className="text"
-          onInput={handleInput}
+          onChange={handleInput}
           label="Search To-Do"
           variant="outlined"
           placeholder="Search..."
