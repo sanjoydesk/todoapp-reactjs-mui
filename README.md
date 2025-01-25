@@ -12,6 +12,9 @@ Todo Application Using Material Ui and React JS
 <img width="342" alt="Screenshot 2025-01-25 at 2 13 59 PM" src="https://github.com/user-attachments/assets/73c20f7b-a98f-42aa-aade-60bd828b3f2a" />
 
 
+# Steps to Run:-
 
-
-
+1. Download or clone the repository to your local directory.
+2. Navigate to the root folder and run npm install.
+3. Once the installation is complete, run npm start.
+4. The application will launch on localhost:3000 in your browser.
