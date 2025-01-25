@@ -20,7 +20,6 @@ const EditTask = () => {
     const [submitted, setSubmitted] = useState(false);
     const navigate = useNavigate();
     const {id, statusId} = useParams();
-    const [alertVisibility, setAlertVisibility] = useState(false);
     const [formData, setFormData] = useState({  title: '', description: '', status: '' });
 
    useEffect(() => {
