@@ -28,6 +28,7 @@ const TaskAccordion = () => {
     navigate('/add-task');
   };
 
+  // Fetch API will be called inside useEffect to get the data from server. For this app used Mock Data
   const data = filterDataByType(cardData);
 
   return (
