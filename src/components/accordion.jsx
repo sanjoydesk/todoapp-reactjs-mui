@@ -48,7 +48,7 @@ const TaskAccordion = () => {
                 <Typography>{statusList[item[0]]} ({item[1].length})</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Cards status={item[0]} data={item[1]} />
+                <Cards status={item[0]} data={item[1]} key={item.id} />
               </AccordionDetails> 
             </Accordion>
           );

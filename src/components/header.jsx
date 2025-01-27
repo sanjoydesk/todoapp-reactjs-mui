@@ -5,6 +5,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useLocation } from "react-router-dom";
 import Toolbar from '@mui/material/Toolbar';
 import { useNavigate } from 'react-router-dom';
+import Config from '../config';
 
 const HeaderLayout = ({title, goToPage}) => {
     const { pathname } = useLocation();
@@ -17,7 +18,7 @@ const HeaderLayout = ({title, goToPage}) => {
     return (
         <AppBar position="static">
         <Toolbar>
-            {pathname !== '/' && <ArrowBackIcon onClick={navigateToPage}/>}
+            {!Config.baseRoutes.includes(pathname) && <ArrowBackIcon onClick={navigateToPage}/>}
             <Typography variant="h6"
                 noWrap gutterBottom component="div" sx={{ pb: 0, mr: 1, ml: pathname !== '/' ? 2 : ''  }} >
                {title}

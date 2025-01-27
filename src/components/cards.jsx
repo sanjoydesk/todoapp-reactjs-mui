@@ -53,8 +53,8 @@ const CardList = ({item, index, status}) => {
 
 const Cards = ({status, data}) => {
     return (
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',   }}>
-            {data && data.map( (item, index) => <CardList item={item} index={index} status={status} />)}
+        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',   }} >
+            {data && data.map( (item, index) => <CardList item={item} index={index} status={status} key={item.id} />)}
         </List>
     )
 };

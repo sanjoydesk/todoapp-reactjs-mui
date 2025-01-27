@@ -8,7 +8,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import cardData from '../services';
 import { NameWrapper } from './style';
-import i18n from "../i18n";
+import i18n from '../i18n';
 
 const TextFieldSearchBar = ({ list }) => {
   const [input, setInput] = useState("");
@@ -33,6 +33,7 @@ const TextFieldSearchBar = ({ list }) => {
           id="search-bar"
           className="text"
           onChange={handleInput}
+          onKeyDown={handleInput}
           label={i18n.searchLabel}
           variant="outlined"
           placeholder={i18n.searchPlaceholder}
