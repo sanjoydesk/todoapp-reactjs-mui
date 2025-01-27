@@ -11,7 +11,7 @@ import { CircleIconWrapper, StatusSection, NameWrapper, ContentWrapper, DateTime
 import { useNavigate } from 'react-router-dom';
 import { statusList } from '../helpers';
 
-const CardList = (item, index, status) => {
+const CardList = ({item, index, status}) => {
     const navigate = useNavigate();
 
     const handleEdit = (item, status) => {
@@ -54,7 +54,7 @@ const CardList = (item, index, status) => {
 const Cards = ({status, data}) => {
     return (
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',   }}>
-            {data && data.map( (item, index) => CardList(item, index, status))}
+            {data && data.map( (item, index) => <CardList item={item} index={index} status={status} />)}
         </List>
     )
 };

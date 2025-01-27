@@ -13,6 +13,7 @@ import { statusList } from '../helpers';
 import { CircleIconWrapper, ListItemTextWrapper, ContainerWrapper } from './style';
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
+import i18n from '../i18n';
 
 
 const EditTask = () => {
@@ -63,18 +64,18 @@ const EditTask = () => {
 
     return (
         <>
-        <HeaderLayout title={'Edit Task'} goToPage={'/'} />
+        <HeaderLayout title={i18n.editTaskTitle} goToPage={'/'} />
         <ContainerWrapper maxWidth="sm">
-        {submitted && <Alert icon={<CheckIcon fontSize="inherit" />} severity="success"> Task Updated Successfully!</Alert>}
+        {submitted && <Alert icon={<CheckIcon fontSize="inherit" />} severity="success"> {i18n.updateSuccessMsg} </Alert>}
         
             <form noValidate onSubmit={handleSubmit}>
-                <TextField fullWidth margin='normal' placeholder='Enter the title' required 
+                <TextField fullWidth margin='normal' placeholder={i18n.titlePlaceholderText} required 
                     name='title'
                     value={formData.title}
                     onChange={handleInputChange} 
                     error={errors.title} />
 
-                <TextField fullWidth margin='normal' placeholder='Enter the description' 
+                <TextField fullWidth margin='normal' placeholder={i18n.descriptionPlaceholderText} 
                     name='description'
                     rows={4} multiline required value={formData.description}
                     error={errors.description}
@@ -84,7 +85,7 @@ const EditTask = () => {
                     labelId="status-select"
                     id="status"
                     value={formData.status}
-                    label="Age"
+                    label="status"
                     fullWidth
                     name='status'
                     style={{textAlign: 'left',  }}
@@ -104,8 +105,8 @@ const EditTask = () => {
                         justifyContent: "space-between",
                         alignItems: "flex-start",margin: '20px',
                     }}>
-                    <Button variant="outlined" onClick={handleCancel}>Cancel</Button>
-                    <Button variant="contained" disabled={!isFormValid} type="submit">Update</Button>
+                    <Button variant="outlined" onClick={handleCancel}>{i18n.cancelBtnLabel}</Button>
+                    <Button variant="contained" disabled={!isFormValid} type="submit">{i18n.updateBtnLabel}</Button>
                 </Stack>
             </form>
         </ContainerWrapper>

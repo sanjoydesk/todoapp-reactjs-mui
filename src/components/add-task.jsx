@@ -8,6 +8,7 @@ import { validateForm } from '../helpers';
 import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
+import i18n from '../i18n';
 
 const AddTask = () => {
 
@@ -50,17 +51,17 @@ const AddTask = () => {
 
     return (
         <>
-        <HeaderLayout title={'Add Task'} goToPage={'/'} sx={{ mb: '10' }} />
+        <HeaderLayout title={i18n.addTaskTitle} goToPage={'/'} sx={{ mb: '10' }} />
         <Container maxWidth="sm" >
-        {submitted && <Alert icon={<CheckIcon fontSize="inherit" />} severity="success" onClose={() => {}}> Task Added Successfully!</Alert>}
+        {submitted && <Alert icon={<CheckIcon fontSize="inherit" />} severity="success" onClose={() => {}}> {i18n.saveSuccessMsg}</Alert>}
         
             <form noValidate onSubmit={handleSubmit}>
-                <TextField fullWidth margin='normal' placeholder='Enter the title' required 
+                <TextField fullWidth margin='normal' placeholder={i18n.titlePlaceholderText} required 
                     name='title'
                     onChange={handleInputChange} 
                     error={errors.title} />
 
-                <TextField fullWidth margin='normal' placeholder='Enter the description' 
+                <TextField fullWidth margin='normal' placeholder={i18n.descriptionPlaceholderText}
                     name='description'
                     rows={4} multiline required value={formData.description}
                     error={errors.description}
@@ -70,8 +71,8 @@ const AddTask = () => {
                         justifyContent: "space-between",
                         alignItems: "flex-start",margin: '20px',
                     }}>
-                    <Button variant="outlined" onClick={handleCancel}>Cancel</Button>
-                    <Button variant="contained" disabled={!isFormValid} type="submit">Add</Button>
+                    <Button variant="outlined" onClick={handleCancel}>{i18n.cancelBtnLabel}</Button>
+                    <Button variant="contained" disabled={!isFormValid} type="submit">{i18n.addBtnLabel}</Button>
                 </Stack>
             </form>
         </Container>

@@ -9,9 +9,10 @@ const App = () => {
   return (
     <div className="App">
       <PaperWrapper square sx={{ pb: '1' }}>
-        <BrowserRouter>
+        <BrowserRouter >
           <Routes>
               <Route path="/" element={ <Home />} />
+              <Route path="/sanjoydesk/todoapp-reactjs-mui" element={ <Home />} />
               <Route path="/add-task" element={<AddTask />} />
               <Route path="/task/:id/:statusId" element={<EditTask />} />
           </Routes>
